@@ -3,7 +3,6 @@ package com.sextantlocator;
 import net.runelite.api.coords.Direction;
 
 import static java.lang.Math.abs;
-import static java.lang.Math.floor;
 
 public class SextantCoordinate
 {
