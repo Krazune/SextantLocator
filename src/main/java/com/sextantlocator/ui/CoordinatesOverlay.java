@@ -26,7 +26,7 @@ public class CoordinatesOverlay extends OverlayPanel
 	@Override
 	public Dimension render(Graphics2D graphics)
 	{
-		if (!sextantLocatorConfig.displayCoordinatesOverlay() || client.getLocalPlayer() == null)
+		if (!sextantLocatorConfig.displayCoordinatesOverlay())
 		{
 			return null;
 		}
@@ -38,6 +38,11 @@ public class CoordinatesOverlay extends OverlayPanel
 
 	private void addOverlayComponents()
 	{
+		if (client.getLocalPlayer() == null)
+		{
+			return;
+		}
+
 		int playerX = client.getLocalPlayer().getWorldLocation().getX();
 		int playerY = client.getLocalPlayer().getWorldLocation().getY();
 		SextantPoint playerSextantPoint = new SextantPoint(playerX, playerY);
