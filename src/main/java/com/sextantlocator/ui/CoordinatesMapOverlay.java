@@ -15,7 +15,6 @@ import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.OverlayPriority;
-import net.runelite.client.ui.overlay.tooltip.TooltipManager;
 import net.runelite.client.ui.overlay.worldmap.WorldMapOverlay;
 
 public class CoordinatesMapOverlay extends Overlay
@@ -25,15 +24,13 @@ public class CoordinatesMapOverlay extends Overlay
 	private final Client client;
 	private final WorldMapOverlay worldMapOverlay;
 	private final SextantLocatorConfig sextantLocatorConfig;
-	private final TooltipManager tooltipManager;
 
 	@Inject
-	public CoordinatesMapOverlay(Client client, WorldMapOverlay worldMapOverlay, SextantLocatorConfig sextantLocatorConfig, TooltipManager tooltipManager)
+	public CoordinatesMapOverlay(Client client, WorldMapOverlay worldMapOverlay, SextantLocatorConfig sextantLocatorConfig)
 	{
 		this.client = client;
 		this.worldMapOverlay = worldMapOverlay;
 		this.sextantLocatorConfig = sextantLocatorConfig;
-		this.tooltipManager = tooltipManager;
 
 		setPosition(OverlayPosition.DYNAMIC);
 		setPriority(OverlayPriority.HIGH);
