@@ -36,10 +36,12 @@ public class CoordinatesOverlay extends OverlayPanel
 		SextantPoint playerSextantPoint = new SextantPoint(playerX, playerY);
 
 		LineComponent titleLine = LineComponent.builder().left("Sextant coordinates:").build();
-		LineComponent coordinateLine = LineComponent.builder().left(playerSextantPoint.toString()).build();
+		LineComponent xCoordinateLine = LineComponent.builder().right(playerSextantPoint.getXCoordinate().toString()).build();
+		LineComponent yCoordinateLine = LineComponent.builder().right(playerSextantPoint.getYCoordinate().toString()).build();
 
 		panelComponent.getChildren().add(titleLine);
-		panelComponent.getChildren().add(coordinateLine);
+		panelComponent.getChildren().add(yCoordinateLine);
+		panelComponent.getChildren().add(xCoordinateLine);
 
 		return super.render(graphics);
 	}

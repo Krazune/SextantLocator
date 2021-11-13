@@ -85,6 +85,6 @@ public class SextantCoordinate
 	@Override
 	public String toString()
 	{
-		return getDegrees() + " " + getMinutesInteger() + " " + getDirection().toString().charAt(0);
+		return getDegrees() + " deg. " + getMinutesInteger() + " min. " + getDirection().toString().charAt(0);
 	}
 }
