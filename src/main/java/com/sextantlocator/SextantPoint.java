@@ -74,6 +74,6 @@ public class SextantPoint
 			return "";
 		}
 
-		return y.toString() + " | " + x.toString();
+		return y + " | " + x;
 	}
 }
