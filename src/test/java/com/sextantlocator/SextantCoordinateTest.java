@@ -17,7 +17,7 @@ public class SextantCoordinateTest
 		SextantCoordinate x = new SextantCoordinate(OBSERVATORY_X, SextantAxis.HORIZONTAL);
 
 		assertEquals(0, x.getDegrees());
-		assertEquals(0, x.getMinutes(), 0f);
+		assertEquals(0f, x.getMinutes(), 0f);
 		assertSame(x.getDirection(), Direction.EAST);
 	}
 
@@ -27,7 +27,7 @@ public class SextantCoordinateTest
 		SextantCoordinate y = new SextantCoordinate(OBSERVATORY_Y, SextantAxis.VERTICAL);
 
 		assertEquals(0, y.getDegrees());
-		assertEquals(0, y.getMinutes(), 0f);
+		assertEquals(0f, y.getMinutes(), 0f);
 		assertSame(y.getDirection(), Direction.NORTH);
 	}
 
@@ -46,7 +46,7 @@ public class SextantCoordinateTest
 	{
 		SextantCoordinate coordinate = new SextantCoordinate(OBSERVATORY_X + 60 / minutePerTile, SextantAxis.HORIZONTAL);
 
-		assertEquals(1f, coordinate.getDegrees(), 0f);
+		assertEquals(1, coordinate.getDegrees());
 		assertEquals(0f, coordinate.getMinutes(), 0f);
 		assertSame(coordinate.getDirection(), Direction.EAST);
 	}
@@ -56,7 +56,7 @@ public class SextantCoordinateTest
 	{
 		SextantCoordinate coordinate = new SextantCoordinate(OBSERVATORY_X + 90 / minutePerTile, SextantAxis.HORIZONTAL);
 
-		assertEquals(1f, coordinate.getDegrees(), 0f);
+		assertEquals(1, coordinate.getDegrees());
 		assertEquals(30f, coordinate.getMinutes(), 0f);
 		assertSame(coordinate.getDirection(), Direction.EAST);
 	}
@@ -69,38 +69,38 @@ public class SextantCoordinateTest
 		// Good...
 		coordinate = new SextantCoordinate(3069f, SextantAxis.HORIZONTAL);
 
-		assertEquals(19f, coordinate.getDegrees(), 0f);
+		assertEquals(19, coordinate.getDegrees());
 		assertEquals(39f, coordinate.getMinutesInteger(), 0f);
 		assertSame(coordinate.getDirection(), Direction.EAST);
 
 		coordinate = new SextantCoordinate(3225f, SextantAxis.HORIZONTAL);
 
-		assertEquals(24f, coordinate.getDegrees(), 0f);
+		assertEquals(24, coordinate.getDegrees());
 		assertEquals(31f, coordinate.getMinutesInteger(), 0f);
 		assertSame(coordinate.getDirection(), Direction.EAST);
 
 		coordinate = new SextantCoordinate(3178f, SextantAxis.HORIZONTAL);
 
-		assertEquals(23f, coordinate.getDegrees(), 0f);
+		assertEquals(23, coordinate.getDegrees());
 		assertEquals(3f, coordinate.getMinutesInteger(), 0f);
 		assertSame(coordinate.getDirection(), Direction.EAST);
 
 		// ... luck
 		coordinate = new SextantCoordinate(3517f, SextantAxis.VERTICAL);
 
-		assertEquals(11f, coordinate.getDegrees(), 0f);
+		assertEquals(11, coordinate.getDegrees());
 		assertEquals(7f, coordinate.getMinutesInteger(), 0f);
 		assertSame(coordinate.getDirection(), Direction.NORTH);
 
 		coordinate = new SextantCoordinate(3219f, SextantAxis.VERTICAL);
 
-		assertEquals(1f, coordinate.getDegrees(), 0f);
+		assertEquals(1, coordinate.getDegrees());
 		assertEquals(48f, coordinate.getMinutesInteger(), 0f);
 		assertSame(coordinate.getDirection(), Direction.NORTH);
 
 		coordinate = new SextantCoordinate(3475f, SextantAxis.VERTICAL);
 
-		assertEquals(9f, coordinate.getDegrees(), 0f);
+		assertEquals(9, coordinate.getDegrees());
 		assertEquals(48f, coordinate.getMinutesInteger(), 0f);
 		assertSame(coordinate.getDirection(), Direction.NORTH);
 	}
