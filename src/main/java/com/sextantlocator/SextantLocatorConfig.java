@@ -98,7 +98,7 @@ public interface SextantLocatorConfig extends Config
 	)
 	default Color coordinateMapOverlayBackgroundColor()
 	{
-		return Color.WHITE;
+		return Color.BLACK;
 	}
 
 	@Alpha
@@ -111,7 +111,7 @@ public interface SextantLocatorConfig extends Config
 	)
 	default Color coordinateMapOverlayTextColor()
 	{
-		return Color.BLACK;
+		return Color.WHITE;
 	}
 
 	@Alpha
@@ -124,6 +124,6 @@ public interface SextantLocatorConfig extends Config
 	)
 	default Color coordinateMapOverlayCrosshairColor()
 	{
-		return Color.CYAN;
+		return Color.WHITE;
 	}
 }
