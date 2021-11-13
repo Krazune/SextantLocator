@@ -6,54 +6,53 @@ import net.runelite.client.config.*;
 @ConfigGroup("sextantlocator")
 public interface SextantLocatorConfig extends Config
 {
-	@ConfigItem(
+	@ConfigSection(
 		position = 0,
+		name = "Coordinates Overlay",
+		description = "Settings for the coordinates overlay."
+	)
+	String coordinatesOverlaySection = "coordinatesOverlaySection";
+
+	@ConfigItem(
+		position = 1,
 		keyName = "displayCoordinatesOverlay",
-		name = "Display coordinates overlay",
-		description = "Display the coordinates overlay when on Runescape's surface."
+		name = "Coordinates overlay",
+		description = "Display the coordinates overlay.",
+		section = coordinatesOverlaySection
 	)
 	default boolean displayCoordinatesOverlay()
 	{
 		return true;
 	}
 
+
+
+	@ConfigSection(
+		position = 2,
+		name = "Tile Tooltip",
+		description = "Settings for the coordinates tile tooltip."
+	)
+	String tileCoordinatesOverlaySection = "tileCoordinatesOverlaySection";
+
 	@ConfigItem(
-		position = 1,
+		position = 3,
 		keyName = "displayTileCoordinatesOverlay",
-		name = "Display tile coordinates tooltip",
-		description = "Display the coordinates tooltip of the tile being hovered by the mouse."
+		name = "Tile tooltip",
+		description = "Display the coordinates tooltip of the tile hovered tile.",
+		section = tileCoordinatesOverlaySection
 	)
 	default boolean displayTileCoordinatesOverlay()
 	{
 		return true;
 	}
 
-	@ConfigItem(
-		position = 2,
-		keyName = "displayMapCoordinatesOverlay",
-		name = "Display map coordinates",
-		description = "Display the sextant coordinates in the map window."
-	)
-	default boolean displayMapCoordinatesOverlay()
-	{
-		return true;
-	}
-
-	@ConfigSection(
-		position = 3,
-		name = "Settings",
-		description = "Extra settings.",
-		closedByDefault = true
-	)
-	String settingsSection = "settingsSection";
-
 	@Alpha
 	@ConfigItem(
 		position = 4,
 		keyName = "selectedTileFillColor",
-		name = "Selected tile color",
-		description = "Selected tile fill color.",
-		section = settingsSection
+		name = "Tile color",
+		description = "Color of the tile fill.",
+		section = tileCoordinatesOverlaySection
 	)
 	default Color selectedTileFillColor()
 	{
@@ -64,9 +63,9 @@ public interface SextantLocatorConfig extends Config
 	@ConfigItem(
 		position = 5,
 		keyName = "selectedTileBorderColor",
-		name = "Selected tile border color",
-		description = "Selected tile border color.",
-		section = settingsSection
+		name = "Border color",
+		description = "Color of the tile border.",
+		section = tileCoordinatesOverlaySection
 	)
 	default Color selectedTileBorderColor()
 	{
@@ -79,22 +78,43 @@ public interface SextantLocatorConfig extends Config
 	@ConfigItem(
 		position = 6,
 		keyName = "selectedTileBorderWidth",
-		name = "Selected tile border width",
-		description = "Selected tile border width.",
-		section = settingsSection
+		name = "Border width",
+		description = "Width of the tile border.",
+		section = tileCoordinatesOverlaySection
 	)
 	default int selectedTileBorderWidth()
 	{
 		return 2;
 	}
 
+
+
+	@ConfigSection(
+		position = 7,
+		name = "Map Overlay",
+		description = "Settings for the map coordinates overlay."
+	)
+	String mapCoordinatesOverlaySection = "mapCoordinatesOverlaySection";
+
+	@ConfigItem(
+		position = 8,
+		keyName = "displayMapCoordinatesOverlay",
+		name = "Map coordinates",
+		description = "Display the sextant coordinates overlay in the map window.",
+		section = mapCoordinatesOverlaySection
+	)
+	default boolean displayMapCoordinatesOverlay()
+	{
+		return true;
+	}
+
 	@Alpha
 	@ConfigItem(
-		position = 7,
+		position = 9,
 		keyName = "coordinateMapOverlayBackgroundColor",
-		name = "Map overlay background color",
-		description = "Color of the map overlay background.",
-		section = settingsSection
+		name = "Background color",
+		description = "Color of the background of the map overlay.",
+		section = mapCoordinatesOverlaySection
 	)
 	default Color coordinateMapOverlayBackgroundColor()
 	{
@@ -103,11 +123,11 @@ public interface SextantLocatorConfig extends Config
 
 	@Alpha
 	@ConfigItem(
-		position = 8,
+		position = 10,
 		keyName = "coordinateMapOverlayTextColor",
-		name = "Map overlay text color",
-		description = "Color of the map overlay text.",
-		section = settingsSection
+		name = "Text color",
+		description = "Color of the text of the map overlay.",
+		section = mapCoordinatesOverlaySection
 	)
 	default Color coordinateMapOverlayTextColor()
 	{
@@ -116,11 +136,11 @@ public interface SextantLocatorConfig extends Config
 
 	@Alpha
 	@ConfigItem(
-		position = 9,
+		position = 11,
 		keyName = "coordinateMapOverlayCrosshairColor",
-		name = "Map overlay crosshair color",
-		description = "Color of the map overlay crosshair.",
-		section = settingsSection
+		name = "Crosshair color",
+		description = "Color of the crosshair of the map overlay.",
+		section = mapCoordinatesOverlaySection
 	)
 	default Color coordinateMapOverlayCrosshairColor()
 	{
