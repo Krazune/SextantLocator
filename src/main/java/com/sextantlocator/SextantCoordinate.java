@@ -9,9 +9,9 @@ public class SextantCoordinate
 	private final float minutes;
 	private final SextantAxis axis;
 
-	private final float observatoryX = 2440f;
-	private final float observatoryY = 3161f;
-	private final float minutePerTile = 15f / 8f;
+	private final float OBSERVATORY_X = 2440f;
+	private final float OBSERVATORY_Y = 3161f;
+	private final float MINUTES_PER_TILE = 15f / 8f;
 
 	public SextantCoordinate(float degrees, float minutes, Direction direction)
 	{
@@ -72,14 +72,14 @@ public class SextantCoordinate
 	{
 		if (axis == SextantAxis.HORIZONTAL)
 		{
-			worldCoordinate -= observatoryX;
+			worldCoordinate -= OBSERVATORY_X;
 		}
 		else
 		{
-			worldCoordinate -= observatoryY;
+			worldCoordinate -= OBSERVATORY_Y;
 		}
 
-		return worldCoordinate * minutePerTile;
+		return worldCoordinate * MINUTES_PER_TILE;
 	}
 
 	@Override

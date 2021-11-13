@@ -7,14 +7,14 @@ import static org.junit.Assert.*;
 
 public class SextantCoordinateTest
 {
-	private final float observatoryX = 2440f;
-	private final float observatoryY = 3161f;
+	private final float OBSERVATORY_X = 2440f;
+	private final float OBSERVATORY_Y = 3161f;
 	private final float minutePerTile = 15f / 8f;
 
 	@Test
 	public void observatoryXTest()
 	{
-		SextantCoordinate x = new SextantCoordinate(observatoryX, SextantAxis.HORIZONTAL);
+		SextantCoordinate x = new SextantCoordinate(OBSERVATORY_X, SextantAxis.HORIZONTAL);
 
 		assertEquals(0, x.getDegrees());
 		assertEquals(0, x.getMinutes(), 0f);
@@ -24,7 +24,7 @@ public class SextantCoordinateTest
 	@Test
 	public void observatoryYTest()
 	{
-		SextantCoordinate y = new SextantCoordinate(observatoryY, SextantAxis.VERTICAL);
+		SextantCoordinate y = new SextantCoordinate(OBSERVATORY_Y, SextantAxis.VERTICAL);
 
 		assertEquals(0, y.getDegrees());
 		assertEquals(0, y.getMinutes(), 0f);
@@ -34,7 +34,7 @@ public class SextantCoordinateTest
 	@Test
 	public void singleStepTest()
 	{
-		SextantCoordinate coordinate = new SextantCoordinate(observatoryX + 1f, SextantAxis.HORIZONTAL);
+		SextantCoordinate coordinate = new SextantCoordinate(OBSERVATORY_X + 1f, SextantAxis.HORIZONTAL);
 
 		assertEquals(0, coordinate.getDegrees());
 		assertEquals(1.875f, coordinate.getMinutes(), 0f);
@@ -44,7 +44,7 @@ public class SextantCoordinateTest
 	@Test
 	public void sixtyMinutesTest()
 	{
-		SextantCoordinate coordinate = new SextantCoordinate(observatoryX + 60 / minutePerTile, SextantAxis.HORIZONTAL);
+		SextantCoordinate coordinate = new SextantCoordinate(OBSERVATORY_X + 60 / minutePerTile, SextantAxis.HORIZONTAL);
 
 		assertEquals(1f, coordinate.getDegrees(), 0f);
 		assertEquals(0f, coordinate.getMinutes(), 0f);
@@ -54,7 +54,7 @@ public class SextantCoordinateTest
 	@Test
 	public void ninetyMinutesTest()
 	{
-		SextantCoordinate coordinate = new SextantCoordinate(observatoryX + 90 / minutePerTile, SextantAxis.HORIZONTAL);
+		SextantCoordinate coordinate = new SextantCoordinate(OBSERVATORY_X + 90 / minutePerTile, SextantAxis.HORIZONTAL);
 
 		assertEquals(1f, coordinate.getDegrees(), 0f);
 		assertEquals(30f, coordinate.getMinutes(), 0f);
