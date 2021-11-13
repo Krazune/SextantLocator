@@ -1,6 +1,7 @@
 package com.sextantlocator;
 
 import com.google.inject.Provides;
+import com.sextantlocator.ui.CoordinatesMapOverlay;
 import com.sextantlocator.ui.CoordinatesOverlay;
 import com.sextantlocator.ui.CoordinatesTooltipOverlay;
 import javax.inject.Inject;
@@ -37,6 +38,9 @@ public class SextantLocatorPlugin extends Plugin
 	@Inject
 	CoordinatesTooltipOverlay coordinatesTooltipOverlay;
 
+	@Inject
+	CoordinatesMapOverlay coordinatesMapOverlay;
+
 	@Provides
 	SextantLocatorConfig provideConfig(ConfigManager configManager)
 	{
@@ -59,11 +63,13 @@ public class SextantLocatorPlugin extends Plugin
 	{
 		overlayManager.add(coordinatesOverlay);
 		overlayManager.add(coordinatesTooltipOverlay);
+		overlayManager.add(coordinatesMapOverlay);
 	}
 
 	private void removeOverlays()
 	{
 		overlayManager.remove(coordinatesOverlay);
 		overlayManager.remove(coordinatesTooltipOverlay);
+		overlayManager.remove(coordinatesMapOverlay);
 	}
 }

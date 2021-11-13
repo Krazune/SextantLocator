@@ -28,8 +28,19 @@ public interface SextantLocatorConfig extends Config
 		return true;
 	}
 
-	@ConfigSection(
+	@ConfigItem(
 		position = 2,
+		keyName = "displayMapCoordinatesOverlay",
+		name = "Display map coordinates",
+		description = "Display the sextant coordinates in the map window."
+	)
+	default boolean displayMapCoordinatesOverlay()
+	{
+		return true;
+	}
+
+	@ConfigSection(
+		position = 3,
 		name = "Settings",
 		description = "Extra settings.",
 		closedByDefault = true
@@ -38,7 +49,7 @@ public interface SextantLocatorConfig extends Config
 
 	@Alpha
 	@ConfigItem(
-		position = 3,
+		position = 4,
 		keyName = "selectedTileFillColor",
 		name = "Selected tile color",
 		description = "Selected tile fill color."
@@ -50,7 +61,7 @@ public interface SextantLocatorConfig extends Config
 
 	@Alpha
 	@ConfigItem(
-		position = 4,
+		position = 5,
 		keyName = "selectedTileBorderColor",
 		name = "Selected tile border color",
 		description = "Selected tile border color."
@@ -64,7 +75,7 @@ public interface SextantLocatorConfig extends Config
 		min = 1
 	)
 	@ConfigItem(
-		position = 5,
+		position = 6,
 		keyName = "selectedTileBorderWidth",
 		name = "Selected tile border width",
 		description = "Selected tile border width."
@@ -72,5 +83,41 @@ public interface SextantLocatorConfig extends Config
 	default int selectedTileBorderWidth()
 	{
 		return 2;
+	}
+
+	@Alpha
+	@ConfigItem(
+		position = 7,
+		keyName = "coordinateMapOverlayBackgroundColor",
+		name = "Map overlay background color",
+		description = "Color of the map overlay background."
+	)
+	default Color coordinateMapOverlayBackgroundColor()
+	{
+		return Color.WHITE;
+	}
+
+	@Alpha
+	@ConfigItem(
+		position = 8,
+		keyName = "coordinateMapOverlayTextColor",
+		name = "Map overlay text color",
+		description = "Color of the map overlay text."
+	)
+	default Color coordinateMapOverlayTextColor()
+	{
+		return Color.BLACK;
+	}
+
+	@Alpha
+	@ConfigItem(
+		position = 9,
+		keyName = "coordinateMapOverlayCrosshairColor",
+		name = "Map overlay crosshair color",
+		description = "Color of the map overlay crosshair."
+	)
+	default Color coordinateMapOverlayCrosshairColor()
+	{
+		return Color.CYAN;
 	}
 }
