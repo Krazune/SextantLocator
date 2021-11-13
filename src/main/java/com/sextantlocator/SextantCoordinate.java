@@ -9,8 +9,8 @@ public class SextantCoordinate
 	private final float minutes;
 	private final SextantAxis axis;
 
-	private final float observatoryX = 2440.5f;
-	private final float observatoryY = 3161.5f;
+	private final float observatoryX = 2440f;
+	private final float observatoryY = 3161f;
 	private final float minutePerTile = 15f / 8f;
 
 	public SextantCoordinate(float degrees, float minutes, Direction direction)

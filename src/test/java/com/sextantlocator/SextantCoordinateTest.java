@@ -7,8 +7,8 @@ import static org.junit.Assert.assertTrue;
 
 public class SextantCoordinateTest
 {
-	private final float observatoryX = 2440.5f;
-	private final float observatoryY = 3161.5f;
+	private final float observatoryX = 2440f;
+	private final float observatoryY = 3161f;
 	private final float minutePerTile = 15f / 8f;
 
 	@Test
