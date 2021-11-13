@@ -31,6 +31,13 @@ public class CoordinatesOverlay extends OverlayPanel
 			return null;
 		}
 
+		addOverlayComponents();
+
+		return super.render(graphics);
+	}
+
+	private void addOverlayComponents()
+	{
 		int playerX = client.getLocalPlayer().getWorldLocation().getX();
 		int playerY = client.getLocalPlayer().getWorldLocation().getY();
 		SextantPoint playerSextantPoint = new SextantPoint(playerX, playerY);
@@ -42,7 +49,5 @@ public class CoordinatesOverlay extends OverlayPanel
 		panelComponent.getChildren().add(titleLine);
 		panelComponent.getChildren().add(yCoordinateLine);
 		panelComponent.getChildren().add(xCoordinateLine);
-
-		return super.render(graphics);
 	}
 }
