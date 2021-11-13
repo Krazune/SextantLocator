@@ -43,6 +43,11 @@ public class SextantCoordinate
 		return abs(minutes % 60);
 	}
 
+	public int getMinutesInteger()
+	{
+		return (int) abs(minutes % 60);
+	}
+
 	public Direction getDirection()
 	{
 		if (minutes >= 0)
@@ -80,6 +85,6 @@ public class SextantCoordinate
 	@Override
 	public String toString()
 	{
-		return getDegrees() + " " + (int) getMinutes() + " " + getDirection().toString();
+		return getDegrees() + " " + getMinutesInteger() + " " + getDirection().toString().charAt(0);
 	}
 }
