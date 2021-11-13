@@ -2,6 +2,7 @@ package com.sextantlocator;
 
 import com.google.inject.Provides;
 import com.sextantlocator.ui.CoordinatesOverlay;
+import com.sextantlocator.ui.CoordinatesTooltipOverlay;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.config.ConfigManager;
@@ -33,6 +34,9 @@ public class SextantLocatorPlugin extends Plugin
 	@Inject
 	CoordinatesOverlay coordinatesOverlay;
 
+	@Inject
+	CoordinatesTooltipOverlay coordinatesTooltipOverlay;
+
 	@Provides
 	SextantLocatorConfig provideConfig(ConfigManager configManager)
 	{
@@ -54,10 +58,12 @@ public class SextantLocatorPlugin extends Plugin
 	private void addOverlays()
 	{
 		overlayManager.add(coordinatesOverlay);
+		overlayManager.add(coordinatesTooltipOverlay);
 	}
 
 	private void removeOverlays()
 	{
 		overlayManager.remove(coordinatesOverlay);
+		overlayManager.remove(coordinatesTooltipOverlay);
 	}
 }
