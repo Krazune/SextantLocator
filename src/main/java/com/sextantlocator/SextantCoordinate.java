@@ -80,7 +80,6 @@ public class SextantCoordinate
 	@Override
 	public String toString()
 	{
-		// The rounding doesn't follow the ingame sextant coordinates yet.
-		return getDegrees() + " " + getMinutes() + " " + getDirection().toString();
+		return getDegrees() + " " + (int) getMinutes() + " " + getDirection().toString();
 	}
 }
