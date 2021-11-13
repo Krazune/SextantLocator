@@ -52,7 +52,8 @@ public interface SextantLocatorConfig extends Config
 		position = 4,
 		keyName = "selectedTileFillColor",
 		name = "Selected tile color",
-		description = "Selected tile fill color."
+		description = "Selected tile fill color.",
+		section = settingsSection
 	)
 	default Color selectedTileFillColor()
 	{
@@ -64,7 +65,8 @@ public interface SextantLocatorConfig extends Config
 		position = 5,
 		keyName = "selectedTileBorderColor",
 		name = "Selected tile border color",
-		description = "Selected tile border color."
+		description = "Selected tile border color.",
+		section = settingsSection
 	)
 	default Color selectedTileBorderColor()
 	{
@@ -78,7 +80,8 @@ public interface SextantLocatorConfig extends Config
 		position = 6,
 		keyName = "selectedTileBorderWidth",
 		name = "Selected tile border width",
-		description = "Selected tile border width."
+		description = "Selected tile border width.",
+		section = settingsSection
 	)
 	default int selectedTileBorderWidth()
 	{
@@ -90,7 +93,8 @@ public interface SextantLocatorConfig extends Config
 		position = 7,
 		keyName = "coordinateMapOverlayBackgroundColor",
 		name = "Map overlay background color",
-		description = "Color of the map overlay background."
+		description = "Color of the map overlay background.",
+		section = settingsSection
 	)
 	default Color coordinateMapOverlayBackgroundColor()
 	{
@@ -102,7 +106,8 @@ public interface SextantLocatorConfig extends Config
 		position = 8,
 		keyName = "coordinateMapOverlayTextColor",
 		name = "Map overlay text color",
-		description = "Color of the map overlay text."
+		description = "Color of the map overlay text.",
+		section = settingsSection
 	)
 	default Color coordinateMapOverlayTextColor()
 	{
@@ -114,7 +119,8 @@ public interface SextantLocatorConfig extends Config
 		position = 9,
 		keyName = "coordinateMapOverlayCrosshairColor",
 		name = "Map overlay crosshair color",
-		description = "Color of the map overlay crosshair."
+		description = "Color of the map overlay crosshair.",
+		section = settingsSection
 	)
 	default Color coordinateMapOverlayCrosshairColor()
 	{
