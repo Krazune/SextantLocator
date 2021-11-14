@@ -19,3 +19,6 @@ Current version: **2021.11.2**
 
 ## Configurations
 ![Configurations](resources/configurations.png)
+
+## License
+[BSD 2-Clause License](LICENSE)
