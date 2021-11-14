@@ -2,7 +2,7 @@
 RuneLite helper plugin for Sextant coordinates.
 
 ## Version
-Current version: **2021.11.1**
+Current version: **2021.11.2**
 
 *The version format is &quot;&lt;year&gt;.&lt;zero padded month&gt;.&lt;revision number&gt;&quot;.*
 
@@ -19,3 +19,6 @@ Current version: **2021.11.1**
 
 ## Configurations
 ![Configurations](resources/configurations.png)
+
+## License
+[BSD 2-Clause License](LICENSE)
