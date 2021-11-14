@@ -2,7 +2,11 @@ package com.sextantlocator.ui;
 
 import com.sextantlocator.SextantLocatorConfig;
 import com.sextantlocator.SextantPoint;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import javax.inject.Inject;
 import net.runelite.api.Client;
 import net.runelite.api.Point;
