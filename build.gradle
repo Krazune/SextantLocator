@@ -24,7 +24,7 @@ dependencies {
 }
 
 group = 'com.sextantlocator'
-version = '2021.11.1'
+version = '2021.11.2'
 sourceCompatibility = '1.8'
 
 tasks.withType(JavaCompile) {
